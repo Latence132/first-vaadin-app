@@ -27,6 +27,7 @@ import com.example.application.views.helloworld.HelloWorldView;
 import com.example.application.views.about.AboutView;
 import com.example.application.views.cardlist.CardListView;
 import com.example.application.views.personform.PersonFormView;
+import com.example.application.views.welcome.WelcomeView;
 import com.vaadin.flow.theme.lumo.Lumo;
 
 /**
@@ -89,7 +90,7 @@ public class MainView extends AppLayout {
 
     private Component[] createMenuItems() {
         return new Tab[]{createTab("Hello World", HelloWorldView.class), createTab("About", AboutView.class),
-                createTab("Card List", CardListView.class), createTab("Person Form", PersonFormView.class)};
+                createTab("Card List", CardListView.class), createTab("Person Form", PersonFormView.class), createTab("Welcome", WelcomeView.class)};
     }
 
     private static Tab createTab(String text, Class<? extends Component> navigationTarget) {
