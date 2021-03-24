@@ -10,7 +10,9 @@ public class Person {
     private String comments;
     private String shares;
 
+    
     public Person() {
+        // use for CardListView
     }
 
     public String getImage() {
