@@ -2,7 +2,11 @@ package com.example.application.data.entity;
 
 import java.time.LocalDate;
 
-public class Blog {
+import javax.persistence.Entity;
+
+import com.example.application.data.AbstractEntity;
+@Entity
+public class Blog  extends AbstractEntity {
 
     private String title;
     private String content;
