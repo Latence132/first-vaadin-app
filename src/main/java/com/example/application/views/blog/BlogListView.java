@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.example.application.data.entity.Blog;
 import com.example.application.data.service.BlogService;
+import com.example.application.scheduler.BlogScheduler;
 import com.example.application.views.main.MainView;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.grid.Grid;
@@ -100,6 +101,13 @@ public class BlogListView extends Div implements AfterNavigationObserver {
 
         // Set some data when this view is displayed.
         log.info("BlogListView loaded");
+        BlogScheduler example = new BlogScheduler();
+        try {
+            example.run();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
 
     private static Blog createBlog(String author, String content, LocalDate publication_date) {
