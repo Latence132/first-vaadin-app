@@ -101,13 +101,13 @@ public class BlogListView extends Div implements AfterNavigationObserver {
 
         // Set some data when this view is displayed.
         log.info("BlogListView loaded");
-        BlogScheduler example = new BlogScheduler();
-        try {
-            example.run();
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+        // BlogScheduler example = new BlogScheduler();
+        // try {
+        //     example.run();
+        // } catch (Exception e) {
+        //     // TODO Auto-generated catch block
+        //     e.printStackTrace();
+        // }
     }
 
     private static Blog createBlog(String author, String content, LocalDate publication_date) {

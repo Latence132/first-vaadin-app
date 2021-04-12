@@ -21,6 +21,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 import com.example.application.batch.BlogItemProcessor;
 import com.example.application.batch.JobCompletionNotificationListener;
@@ -28,6 +29,7 @@ import com.example.application.data.entity.Blog;
 
 @Configuration
 @EnableBatchProcessing
+@EnableScheduling
 public class BatchConfiguration {
 
     @Autowired
@@ -57,7 +59,6 @@ public class BatchConfiguration {
         return new JdbcBatchItemWriterBuilder<Blog>()
                 .itemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<>())
                 .sql("INSERT INTO BLOG (title, content, author, publication_date) VALUES (:title, :content, :author, :publication_date)")
-                // .sql("INSERT INTO people (first_name, last_name) VALUES (:title, :title)")
                 .dataSource(dataSource).build();
     }
 
